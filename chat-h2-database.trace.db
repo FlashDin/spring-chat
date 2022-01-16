@@ -1,0 +1,12 @@
+2022-01-16 18:24:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CHAT" not found; SQL statement:
+select chat0_.id as id1_0_, chat0_.me as me2_0_, chat0_.message as message3_0_, chat0_.you as you4_0_ from chat chat0_ order by chat0_.id asc limit ? [42102-200]
+2022-01-16 18:25:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CHAT" not found; SQL statement:
+select chat0_.id as id1_0_, chat0_.me as me2_0_, chat0_.message as message3_0_, chat0_.you as you4_0_ from chat chat0_ order by chat0_.id asc limit ? [42102-200]
+2022-01-16 18:25:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CHAT" not found; SQL statement:
+select chat0_.id as id1_0_, chat0_.me as me2_0_, chat0_.message as message3_0_, chat0_.you as you4_0_ from chat chat0_ order by chat0_.id asc limit ? [42102-200]
+2022-01-16 18:26:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CHAT" not found; SQL statement:
+select chat0_.id as id1_0_, chat0_.me as me2_0_, chat0_.message as message3_0_, chat0_.you as you4_0_ from chat chat0_ order by chat0_.id asc limit ? [42102-200]
