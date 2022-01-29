@@ -29,24 +29,24 @@ class ChatControllerTest {
 
     @Test
     void findByUser() {
-        assertTrue(chatController.findByUser("nfound", null, Pageable.ofSize(10)).getBody().isEmpty());
-        assertFalse(chatController.findByUser("found", null, Pageable.ofSize(10)).getBody().isEmpty());
+        assertTrue(chatController.findByUser("nfound", null, Pageable.ofSize(10)).isEmpty());
+        assertFalse(chatController.findByUser("found", null, Pageable.ofSize(10)).isEmpty());
     }
 
     @Test
     void save() {
-        assertTrue(Optional.of(chatController.save(chatDto).getBody()).isPresent());
+        assertTrue(Optional.of(chatController.save(chatDto)).isPresent());
     }
 
     @Test
     void update() {
         chatDto.setId(Long.valueOf(1));
         chatDto.setYou("komodo");
-        assertTrue(Optional.of(chatController.update(chatDto).getBody()).isPresent());
+        assertTrue(Optional.of(chatController.update(chatDto)).isPresent());
     }
 
     @Test
     void delete() {
-        assertTrue(Optional.of(chatController.delete(Long.valueOf(1)).getBody()).isPresent());
+        assertTrue(Optional.of(chatController.delete(Long.valueOf(1))).isPresent());
     }
 }
