@@ -2,8 +2,11 @@ package com.example.springchat.entities;
 
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table
@@ -19,6 +22,12 @@ public class Chat {
     private String you;
     @Column
     private String message;
+    @Column
+    @CreationTimestamp
+    private Date createdDate;
+    @Column
+    @UpdateTimestamp
+    private Date modifiedDate;
 
     public Chat() {
     }
