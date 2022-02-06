@@ -1,5 +1,6 @@
 package com.example.springchat.controllers;
 
+import com.example.springchat.components.ChatSenderComponent;
 import com.example.springchat.entities.Chat;
 import com.example.springchat.entities.ChatDto;
 import com.example.springchat.services.ChatService;
@@ -18,6 +19,8 @@ public class ChatController {
 
     @Autowired
     private ChatService chatService;
+    @Autowired
+    private ChatSenderComponent senderComponent;
 
     @GetMapping
     public ResponseEntity<Page<ChatDto>> findByUser(@RequestParam String me,
@@ -32,6 +35,9 @@ public class ChatController {
     public ResponseEntity<ChatDto> save(@RequestBody ChatDto dto) {
         Chat chat = new Chat(dto);
         dto = Optional.of(chatService.getChatRepository().save(chat)).map(ChatDto::new).orElse(null);
+        if (dto != null) {
+            senderComponent.sender(dto);
+        }
         return ResponseEntity.ok(dto);
     }
 

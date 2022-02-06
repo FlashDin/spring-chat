@@ -20,7 +20,6 @@ public class ChatService implements ChatIface {
     @Setter
     private ChatRepository chatRepository;
 
-
     @Override
     public Page<Chat> findByUser(String me, String you, Pageable pageable) {
         List<Chat> chatList = this.chatRepository.findAll(pageable)
@@ -30,4 +29,5 @@ public class ChatService implements ChatIface {
         return new PageImpl(chatList,
                 pageable, chatList.size());
     }
+
 }
